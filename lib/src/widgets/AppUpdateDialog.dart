@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../ForceUpdateStore.dart';
-import '../services/DialogService.dart';
+import '../../upgrader/ForceUpdateStore.dart';
+import '../../upgrader/services/DialogService.dart';
 
-class DialogManager extends StatefulWidget {
+class AppUpdateDialog extends StatefulWidget {
   final Widget child;
-  DialogManager({Key key, this.child}) : super(key: key);
-  _DialogManagerState createState() => _DialogManagerState();
+  AppUpdateDialog({Key key, this.child}) : super(key: key);
+  _AppUpdateDialogState createState() => _AppUpdateDialogState();
 }
 
-class _DialogManagerState extends State<DialogManager> {
+class _AppUpdateDialogState extends State<AppUpdateDialog> {
   DialogService _dialogService = ForceUpdateStore.getLocator()<DialogService>();
 
   @override
