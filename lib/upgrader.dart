@@ -3,7 +3,7 @@ import 'dart:async';
 import 'upgrader/ForceUpdateEvents.dart';
 import 'upgrader/ForceUpdateStore.dart';
 import 'upgrader/services/DialogService.dart';
-import 'upgrader/services/FirebaseRemoteConfigService.dart';
+import 'upgrader/services/AppVersionManagerService.dart';
 
 class UpgraderService {
   static DialogService _dialogService =
@@ -19,7 +19,10 @@ class UpgraderService {
         await _dialogService.showDialog();
       }
     });
-    FireBaseRemoteConfigService.fetchConfig();
+  }
+
+  static void verifyVersion(final String remoteConfigVersion) {
+    AppVersionManagerService.versionCheck(remoteConfigVersion);
   }
 
   static void cleanup() {
