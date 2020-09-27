@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 
 class ForceUpdateStore {
-  static GetIt locator = GetIt();
+  static GetIt locator = GetIt.instance;
   static String appUrl;
 
   static GetIt getLocator() {
